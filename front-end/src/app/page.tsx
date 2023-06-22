@@ -1,6 +1,6 @@
 "use client";
 import Nav from '../components/nav.js'
-//import Footer from '../components/footer.js'
+import Footer from '../components/footer.js'
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
 
       if (prevScrollPos > currentScrollPos) {
 	setIsVisible(true);
-      } else {
+      } else { 
 	setIsVisible(false);
       }
 
@@ -28,11 +28,14 @@ export default function Home() {
   }, [prevScrollPos]);
   return (
 	<>
+	<div className=" bg-grey flex flex-col h-screen justify-between">
 	<header className={`fixed top-0 left-0 w-full bg-white shadow-lg transition duration-300 transform ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
 		<Nav/>
 		
 	</header>
-    <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+	<main className=" flex min-h-screen flex-col items-center justify-between p-24"></main>
+	<Footer/>
+    	</div>
     </>
   )
 }
