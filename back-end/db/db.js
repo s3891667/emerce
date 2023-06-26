@@ -1,3 +1,5 @@
 const mongoose = require("mongoose");
+require('dotenv').config();
 
-mongoose.connect('mongodb+srv://khoaitrmit:Maimai01234@emerce.yti7cxe.mongodb.net/?retryWrites=true&w=majority')
+
+mongoose.connect(process.env.DB_URL)
