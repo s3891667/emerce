@@ -1,26 +1,26 @@
 async function register(req, res) {
-	const {email, username, password} = req.body;
+	const {username, email, password, repassword} = req.body;
 	try {
-		const verificationCode = Math.floor(100000 + Math.random() * 900000);
-		req.session.userName = username;
-		req.session.vericode = verificationCode;
-		req.session.email = email;
-		//Find user
-		const existedUser = await User.findOne({username, email});
-		if (existedUser) {
-			// If user exists, .....
+		const verificationcode = math.floor(100000 + math.random() * 900000);
+		//req.session.username = username;
+		//req.session.vericode = verificationcode;
+		//req.session.email = email;
+		//find user
+		const existeduser = await user.findone({username, email});
+		if (existeduser) {
+			// if user exists, .....
 			return res.json("the account have already existed ! ");
 		}
 		//sending the opt code to users' emails
-		await userMiddleWare.optCodesending(verificationCode, email);
-		const temporaryUser = new User({
-			isVerified: false,
+		await usermiddleware.optcodesending(verificationcode, email);
+		const temporaryuser = new user({
+			isverified: false,
 			email: email,
 			username: username,
 			password: password,
 		});
-		await temporaryUser.save();
-		res.status(200).send("Successfully registered");
+		await temporaryuser.save();
+		res.status(200).send("successfully registered");
 	} catch (error) {
 		console.log(error);
 	}
@@ -44,9 +44,6 @@ async function order() {
 }
 
 module.export = {
-	login,
-	logout,
-	order,
 	register
 }
 
