@@ -1,38 +1,41 @@
 'use client';
 import Layout from '../../../components/mainLayout'
+import axios from 'axios';
 
 export default function Register() {
-     const handleSubmit = async (event) => {
-     const endpoint = 'localhost:5000/api/users/register'
-  	event.preventDefault()
-	    // Get data from the form.
-	    const data = {
-	      un: event.target.un.value,
-	      email: event.target.email.value,
-	      pw: event.target.pw.value,
-	      rpw: event.target.rpw.value
+    const handleSubmit = async (event) => {
+  event.preventDefault();
 
-		}
-	const JSONdata = JSON.stringify(data)
-	const options = {
-      // The method is POST because we are sending data.
-      method: 'POST',
-      // Tell the server we're sending JSON.
+  const endpoint = 'http://localhost:5000/api/users/register'; // Update the endpoint URL
+
+  // Get data from the form.
+  const data = {
+    un: event.target.un.value,
+    email: event.target.email.value,
+    pw: event.target.pw.value,
+    rpw: event.target.rpw.value,
+  };
+  console.log(data)
+
+  try {
+    // Send the form data to the server using Axios.
+    const response = await axios.post(endpoint, data, {
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
       },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    }
- 
-    // Send the form data to our forms API on Vercel and get a response.
-    const response = await fetch(endpoint, options)
- 
-    // Get the response data from server as JSON.
-    // If server returns the name submitted, that means the form works.
-    const result = await response.json()
-    alert(`Is this your full name: ${result.data}`)
-    }
+      withCredentials: true,
+    });
+
+    // Get the response data from the server.
+    const result = response.data;
+    alert(`Is this your full name: ${result.data}`);
+  } catch (error) {
+    // Handle error
+    console.error(error);
+  }
+};
 
   return (
 	  <>

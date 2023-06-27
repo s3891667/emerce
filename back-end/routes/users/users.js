@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
 });
 
 //add the middleware function 
-router.post('/register', function (req, res) {Controllers.register})
+router.post('/register', Controllers.register)
 
 module.exports = router;
 //var express = require("express");
