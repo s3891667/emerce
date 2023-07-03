@@ -1,26 +1,40 @@
+
+const bcrypt = require('bcrypt');
+const user = require('../model/user')
+
 async function register(req, res) {
-	const {email, username, password} = req.body;
+	const {un, email, pw, rpw} = req.body;
+	console.log(un)
 	try {
-		const verificationCode = Math.floor(100000 + Math.random() * 900000);
-		req.session.userName = username;
-		req.session.vericode = verificationCode;
-		req.session.email = email;
-		//Find user
-		const existedUser = await User.findOne({username, email});
-		if (existedUser) {
-			// If user exists, .....
+		const verificationcode = math.floor(100000 + math.random() * 900000);
+		//req.session.un = username;
+		//req.session.vericode = verificationcode;
+		//req.session.email = email;
+		//find user
+		const existeduser = await user.findOne({username: un});
+		if (existeduser) {
+			// if user exists, .....
 			return res.json("the account have already existed ! ");
 		}
 		//sending the opt code to users' emails
-		await userMiddleWare.optCodesending(verificationCode, email);
-		const temporaryUser = new User({
-			isVerified: false,
-			email: email,
-			username: username,
-			password: password,
+		//await usermiddleware.optcodesending(verificationcode, email);
+		bcrypt.hash(pw, 10, function (err, hash) {
+			if (err) {
+				// Handle error
+			} else {
+				// Store the hash in your database or use it as needed
+				console.log('Hashed pw:', hash);
+			}
 		});
-		await temporaryUser.save();
-		res.status(200).send("Successfully registered");
+		const temporaryuser = new user({
+			//isverified: false,
+			username: un,
+			password: pw,
+			email: email,
+		});
+		await temporaryuser.save();
+		res.status(200).send("successfully registered");
+
 	} catch (error) {
 		console.log(error);
 	}
@@ -43,10 +57,8 @@ async function order() {
 
 }
 
-module.export = {
-	login,
-	logout,
-	order,
+module.exports = {
+
 	register
 }
 

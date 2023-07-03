@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var controllers = require('../../controllers')
-var middleware = requre('../../middleware')
+var Controllers = require('../../controllers/controllers')
+var middleware = require('../../middleware/middleware')
+
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -9,8 +10,17 @@ router.get('/', function (req, res, next) {
 });
 
 //add the middleware function 
-//router.post('/register', function(req,res,next){
-
-//})
+router.post('/register', Controllers.register)
 
 module.exports = router;
+//var express = require("express");
+//var router = express.Router();
+//var axios = require("axios");
+
+//router.post("/signUp/", userControl.register);
+//router.post("/signUp/Email/", userMiddleWare.validateRegistration);
+//router.post("/signUp/resend/", userControl.resend);
+//router.post("/login/", userControl.login);
+
+//module.exports = router;
+
