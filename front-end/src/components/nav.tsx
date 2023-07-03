@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
+
 import Link from 'next/link'
 import logo from '../img/logo.png'
 import user from '../img/user.png'
 import cart from '../img/cart.png'
+
 import more from '../img/more.png'
 
 export default function Nav() {
@@ -60,6 +62,7 @@ export default function Nav() {
 
 						</button>
 					</div>
+
 				</nav>
 			</div>
 		</>

@@ -1,3 +1,4 @@
+
 const bcrypt = require('bcrypt');
 const user = require('../model/user')
 
@@ -33,6 +34,7 @@ async function register(req, res) {
 		});
 		await temporaryuser.save();
 		res.status(200).send("successfully registered");
+
 	} catch (error) {
 		console.log(error);
 	}
@@ -56,6 +58,7 @@ async function order() {
 }
 
 module.exports = {
+
 	register
 }
 

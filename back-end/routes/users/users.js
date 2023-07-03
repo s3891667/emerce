@@ -3,6 +3,7 @@ var router = express.Router();
 var Controllers = require('../../controllers/controllers')
 var middleware = require('../../middleware/middleware')
 
+
 /* GET users listing. */
 router.get('/', function (req, res, next) {
 	res.send('respond with a resource');
@@ -22,3 +23,4 @@ module.exports = router;
 //router.post("/login/", userControl.login);
 
 //module.exports = router;
+
