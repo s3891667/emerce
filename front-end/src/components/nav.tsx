@@ -20,7 +20,7 @@ export default function Nav() {
 				@media only screen and (max-width: 768px) {
           				.nav-links {
             				z-index: -1; 
-          					}
+          				}
 				}
 			}
 			`}</style>
