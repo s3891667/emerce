@@ -29,7 +29,7 @@ export default function MainLayout({children}) {
 	}, [prevScrollPos]);
 	return (
 		<>
-			<div className=" bg-grey flex flex-col h-screen justify-between">
+			<div className=" bg-grey flex flex-col h-screen justify-between font-sans">
 				<header className={`fixed top-0 left-0 w-full bg-white shadow-lg transition duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
 
 					<Nav />

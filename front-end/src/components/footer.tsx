@@ -39,27 +39,47 @@ export default function Footer() {
 								<h2> Live Chat </h2>
 								<p> 50 Barry st </p>
 							</div>
-							<div className='flex flex-col'>
-								<div className='flex md:items-center md:space-x-3'>
-									<Image className='md:w-11 h-auto' src={facebook} alt='facebook logo' />
-									<Image className='md:w-10 h-auto' src={instagram} alt='instagram logo' />
-									<Image className='md:w-10 h-auto' src={linkedin} alt='linkedin logo' />
+							<div className='md:flex md:flex-col '>
+								<div className='md:flex md:items-center md:space-x-3 justify-end'>
+									<Image className=' w-8 md:w-11 h-auto' src={facebook} alt='facebook logo' />
+									<Image className='w-7 md:w-10 h-auto' src={instagram} alt='instagram logo' />
+									<Image className='w-7 md:w-10 h-auto' src={linkedin} alt='linkedin logo' />
 								</div>
-								<Link href='/'>BLOG</Link>
-								<Link href='/'>VIETNAM</Link>
-								<Link href='/'>AUSTRALIA</Link>
 								<div className='flex md:mt-2 '>
 									<form action="/" method="post">
 										<div className=''>
-											<input className='border-solid border-2 border-grey-600 md:h-8' type="text" placeholder="Leave your email here..." />
-											<button className='md:h-8 md:w-16 md:bg-blue-500' type="submit">Send</button>
 										</div>
 									</form>
 
 								</div>
 							</div>
 						</div>
+						<div className='flex flex-col justify-center h-full'>
+							<div className='flex flex-grow justify-between items-center'>
+								<div className=''>
+									<span>© 2023 Emerce, Inc. All Rights Reserved</span>
+								</div>
+								<ul className='flex md:flex-row space-x-5'>
+									<li>
+										<span>Guides</span>
+									</li>
+									<li>
+										<span>Terms of Sale</span>
+									</li>
+									<li>
+										<span>Terms of Use</span>
+									</li>
+									<li>
+										<span>
+											Emerce Privacy Policy
+										</span>
+									</li>
+
+								</ul>
+							</div>
+						</div>
 					</div>
+
 
 				</footer>
 			</div >
