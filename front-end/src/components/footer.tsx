@@ -15,16 +15,34 @@ export default function Footer() {
 	return (
 		<>
 			<div className=' bg-white'>
-				<footer className=' md:container md:mx-auto'>
-					<div className=' h-60 grid justify-center'>
-						<div className='grid grid-cols-4 md:gap-20 justify-center items-center '>
+				<footer className='md:px-0 px-4'>
+					<div className=' h-fit md:h-60 md:grid '>
+						<div className=' md:flex md:flex-col md:grid  md:grid-cols-4 md:gap-10 md:justify-between items-center md:px-[20rem] '>
 							<div className='flex flex-col'>
-								<Link href='/'>MEAL PLANS</Link>
-								<Link href='/'>FAQ</Link>
-								<Link href='/'>SERVICE & DELIVERY</Link>
-								<Link href='/'>WHOLESALE</Link>
-								<Link href='/'>PRIVACY STATEMENT</Link>
-								<Link href='/'>TERMS AND CONDITIONS</Link>
+								<ul>
+									<li>
+										<Link href='/'>MEAL PLANS</Link>
+									</li>
+									<li>
+										<Link href='/'>FAQ</Link>
+									</li>
+									<li>
+										<Link href='/'>SERVICE & DELIVERY</Link>
+									</li>
+
+									<li>
+										<Link href='/'>WHOLESALE</Link>
+
+									</li>
+									<li>
+										<Link href='/'>PRIVACY STATEMENT</Link>
+
+									</li>
+									<li>
+
+										<Link href='/'>TERMS AND CONDITIONS</Link>
+									</li>
+								</ul>
 							</div>
 							<div className='flex flex-col'>
 								<Link href='/'>BLOG</Link>
@@ -39,8 +57,9 @@ export default function Footer() {
 								<h2> Live Chat </h2>
 								<p> 50 Barry st </p>
 							</div>
-							<div className='md:flex md:flex-col '>
-								<div className='md:flex md:items-center md:space-x-3 justify-end'>
+							<div className='flex md:flex-col justify-center'>
+
+								<div className='flex md:items-center space-x-3 md:justify-end '>
 									<Image className=' w-8 md:w-11 h-auto' src={facebook} alt='facebook logo' />
 									<Image className='w-7 md:w-10 h-auto' src={instagram} alt='instagram logo' />
 									<Image className='w-7 md:w-10 h-auto' src={linkedin} alt='linkedin logo' />
@@ -50,29 +69,34 @@ export default function Footer() {
 										<div className=''>
 										</div>
 									</form>
-
 								</div>
 							</div>
 						</div>
-						<div className='flex flex-col justify-center h-full'>
+						<div className='flex flex-col justify-center h-full md:px-[20rem]'>
 							<div className='flex flex-grow justify-between items-center'>
 								<div className=''>
 									<span>© 2023 Emerce, Inc. All Rights Reserved</span>
 								</div>
 								<ul className='flex md:flex-row space-x-5'>
 									<li>
-										<span>Guides</span>
+										<button>
+											Guides
+										</button>
 									</li>
 									<li>
-										<span>Terms of Sale</span>
+										<button>
+											Terms of Sale
+										</button>
 									</li>
 									<li>
-										<span>Terms of Use</span>
+										<button>
+											Terms of Use
+										</button>
 									</li>
 									<li>
-										<span>
+										<button>
 											Emerce Privacy Policy
-										</span>
+										</button>
 									</li>
 
 								</ul>
