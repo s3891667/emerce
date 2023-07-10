@@ -40,9 +40,9 @@ async function register(req, res) {
 	}
 }
 
-async function login() {
+async function login(req, res) {
 	try {
-
+		const {username, password} = req.body;
 	} catch (error) {
 		console.log(error);
 

@@ -30,7 +30,7 @@ export default function Nav() {
 						<Image className=' w-20 md:w-28 sm:w-28 h-auto' src={logo} alt='Website logo' />
 					</div>
 					<div
-						className="overflow-y-auto nav-links pl-8 sm:pl-20 md:pl-28 my-14 duration-500 md:static absolute bg-white md:min-h-fit min-h-[40vh] left-0 top-[-1000%] md:w-auto  w-full flex items-center px-5">
+						className="overflow-y-auto nav-links pl-6 sm:pl-20 md:pl-28 my-14 duration-500 md:static absolute bg-white md:min-h-fit min-h-[40vh] left-0 top-[-1000%] md:w-auto  w-full flex items-center px-5">
 						<ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
 							<li>
 								<a className="hover:text-gray-500" href="#">Products</a>
@@ -51,10 +51,10 @@ export default function Nav() {
 					</div>
 					<div className="flex items-center gap-6">
 						<Link href='/'>
-							<Image className='w-auto h-6' src={user} alt='account icon' />
+							<Image className='w-auto h-6 hover:mt-gray-500' src={user} alt='account icon' />
 						</Link>
 						<Link href='/'>
-							<Image className='w-auto h-6' src={cart} alt='cart icon' />
+							<Image className='w-auto h-6 hover:mt-gray-500' src={cart} alt='cart icon' />
 						</Link>
 						<button className='md:hidden' name="menu" onClick={onToggleMenu}>
 
