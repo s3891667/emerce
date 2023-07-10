@@ -51,10 +51,10 @@ export default function Nav() {
 					</div>
 					<div className="flex items-center gap-6">
 						<Link href='/'>
-							<Image className='w-auto h-6' src={user} alt='account icon' />
+							<Image className='w-auto h-6 hover:mt-gray-500' src={user} alt='account icon' />
 						</Link>
 						<Link href='/'>
-							<Image className='w-auto h-6' src={cart} alt='cart icon' />
+							<Image className='w-auto h-6 hover:mt-gray-500' src={cart} alt='cart icon' />
 						</Link>
 						<button className='md:hidden' name="menu" onClick={onToggleMenu}>
 
