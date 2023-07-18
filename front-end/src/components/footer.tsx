@@ -20,6 +20,7 @@ export default function Footer() {
 	function onToggleFooter(e) {
 		const targetName = e.currentTarget.name;
 
+
 		if (targetName === 'regionButton') {
 			setIsRegionVisible(!isRegionVisible);
 		} else if (targetName === 'contactButton') {
@@ -39,20 +40,24 @@ export default function Footer() {
 			      display: block;
 			    }
 
+
 			  }
 			  @media only screen and (max-width: 1199px) {
 			    .mobi {
 			      display: block;
 			    }
 
+
 			  }
 
 		`}
 			</style>
 			<div className=' bg-white'>
+
 				<footer className='lg:px-0  lg:py-0 py-4 px-4 '>
 					<div className=' h-fit lg:h-60 lg:grid '>
 						<div className=' lg:flex lg:flex-col lg:grid bg-white lg:grid-cols-4 lg:gap-10 lg:justify-between items-center lg:px-[20rem] '>
+
 							<div className='flex flex-col'>
 								<ul>
 									<li>
@@ -69,16 +74,19 @@ export default function Footer() {
 										<Link href='/'>WHOLESALE</Link>
 
 									</li>
+
 								</ul>
 							</div>
 							<div className='mobi my-2 lg:my-0'><hr></hr></div>
 							<div className='flex  flex-row lg:hidden '>
 								<label className='font-medium'> More Region Information </label>
+
 								<div className='flex-grow flex justify-end'>
 									<button name="regionButton" onClick={onToggleFooter}>
 										<Image className=' w-4 h-auto' src={plus} alt='plus icon' />
 									</button>
 								</div>
+
 							</div>
 							<div className={`region flex flex flex-col transition-all duration-300 mt-2 lg:h-auto lg:max-h-full ${isRegionVisible ? 'overflow-y-auto max-h-[8rem]' : 'max-h-0 overflow-hidden'}`}>
 
@@ -92,12 +100,14 @@ export default function Footer() {
 							</div>
 							<div className=' contact flex  flex-row lg:hidden lg:mt-0 mt-6 '>
 								<label className='font-medium'> More Contact Information </label>
+
 								<div className='flex-grow flex justify-end'>
 									<button name="contactButton" onClick={onToggleFooter} >
 										<Image className=' w-4 h-auto' src={plus} alt='plus icon' />
 									</button>
 								</div>
 							</div>
+
 							<div className={`contact flex flex-col transition-all duration-300 lg:mb-0 mb-6 mt-2 lg:h-auto ${isContactVisible ? 'overflow-y-auto h-20' : 'h-0 overflow-hidden '}`}>
 								<h1> CONTACT US</h1>
 								<h2> Live Chat </h2>
@@ -109,6 +119,7 @@ export default function Footer() {
 									<Image className=' w-8 lg:w-10 h-auto' src={facebook} alt='facebook logo' />
 									<Image className='w-8  lg:w-10 h-auto' src={instagram} alt='instagram logo' />
 									<Image className='w-8 lg:w-10 h-auto' src={linkedin} alt='linkedin logo' />
+
 								</div>
 								<div className='flex lg:mt-2 '>
 									<form action="/" method="post">
@@ -118,6 +129,7 @@ export default function Footer() {
 								</div>
 							</div>
 						</div>
+
 						<div className=' lg:mt-0 mt-6 flex lg:flex-col  bg-white justify-start flex-row lg:justify-center h-full lg:px-[20rem]'>
 							<div className='lg:flex  flex-grow  justify-between items-center'>
 								<div>
@@ -125,6 +137,7 @@ export default function Footer() {
 								</div >
 								<div className='lg:mt-0 mt-3'>
 									<ul className='lg:flex lg:flex-row  lg:space-x-5 lg:space-y-0 space-y-3'>
+
 										<li>
 											<button>
 												Guides

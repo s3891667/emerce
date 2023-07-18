@@ -42,9 +42,9 @@ async function register(req, res) {
 
 async function login(req, res) {
 	try {
+
 		const {email, password} = req.body;
 		console.log(email);
-
 
 	} catch (error) {
 		console.log(error);
