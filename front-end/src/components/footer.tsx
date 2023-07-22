@@ -49,7 +49,7 @@ export default function Footer() {
 
 		`}
 			</style>
-			<div className=' bg-white'>
+			<div className=' blurring bg-white'>
 				<footer className='lg:px-0  lg:py-0 py-4 px-4 '>
 					<div className=' h-fit lg:h-60 lg:grid '>
 						<div className=' lg:flex lg:flex-col lg:grid bg-white lg:grid-cols-4 lg:gap-10 lg:justify-between items-center lg:px-[20rem] '>

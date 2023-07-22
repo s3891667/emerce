@@ -30,7 +30,6 @@ export default function Register() {
 
 			// Get the response data from the server.
 			const result = response.data;
-			alert(`Is this your full name: ${result.data}`);
 		} catch (error) {
 			// Handle error
 			console.error(error);
