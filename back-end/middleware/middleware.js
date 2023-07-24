@@ -16,16 +16,18 @@ async function verify(req, res) {
 
 
 }
-async function opt(req, res, code, email) {
+
+
+async function opt(req, res, code, email, un) {
 	const hostEmail = process.env.HOST_EMAIL;
-	const hostPass = process.env.host_pass;
+	const hostPass = process.env.HOST_PASS;
+	console.log(req.session.verificationcode);
 	const transporter = nodemailer.createTransport({
-		host: "smtp.forwardemail.net",
-		port: 465,
+		service: "gmail",
 		secure: true,
 		auth: {
-			user: email,
-			pass: pass,
+			user: hostEmail,
+			pass: hostPass,
 		}
 	});
 
@@ -34,7 +36,7 @@ async function opt(req, res, code, email) {
 		to: email,
 		subject: "Emerce verification code", // Subject line
 		text: code,
-		html: "<b>Hello world?</b>", // html body
+		html: `<b>Hi ${un} this is Emerce verification system </b>`, // html body
 	});
 	console.log(req.session.email);
 	res.send(json('The code has been sent to your email !'));

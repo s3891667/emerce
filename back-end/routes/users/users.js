@@ -12,8 +12,8 @@ var Middleware = require('../../middleware/middleware.js')
 //add the middleware function 
 router.post('/register', Controllers.register);
 router.post('/login', Controllers.login);
+router.post('/resend', Controllers.resend);
 router.post('/verify', Middleware.verify);
-router.get('/send', Middleware.opt);
 
 
 
