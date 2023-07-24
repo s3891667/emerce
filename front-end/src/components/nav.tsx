@@ -47,6 +47,7 @@ export default function Nav() {
 					<div
 						className="overflow-y-auto nav-links  my-10 duration-500 lg:static absolute bg-white lg:min-h-fit min-h-[40vh] left-0 top-[-1000%] md:w-full lg:w-auto  w-full flex items-center px-5">
 						<ul className="flex lg:flex-row flex-col lg:items-center lg:gap-[4vw] gap-8">
+
 							<li>
 								<a className="hover:text-gray-500" href="#">Products</a>
 							</li>

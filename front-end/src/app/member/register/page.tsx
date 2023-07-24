@@ -6,11 +6,13 @@ import Link from 'next/link';
 
 export default function Register() {
 	const router = useRouter()
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
 		const endpoint = 'http://localhost:5000/api/users/register'; // Update the endpoint URL
 		const veriLink = 'http://localhost:5000/api/users/verify';
+
 
 		// Get data from the form.
 		const data = {
@@ -41,6 +43,7 @@ export default function Register() {
 			} else {
 				router.push('?error')
 			}
+
 
 		} catch (error) {
 			// Handle error

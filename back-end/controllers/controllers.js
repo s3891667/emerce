@@ -56,6 +56,9 @@ async function login(req, res) {
 			res.status(200).json('Successfully logged in !');
 		}
 
+		const {email, password} = req.body;
+		console.log(email);
+
 	} catch (error) {
 		console.log(error);
 
@@ -82,5 +85,6 @@ module.exports = {
 	register,
 	login,
 	resend,
+
 }
 

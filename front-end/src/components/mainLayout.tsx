@@ -40,6 +40,7 @@ export default function MainLayout({children}) {
 
 				<div className=''>
 
+
 					<Footer />
 				</div>
 			</div>

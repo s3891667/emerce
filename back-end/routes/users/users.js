@@ -4,6 +4,7 @@ var Controllers = require('../../controllers/controllers.js')
 var Middleware = require('../../middleware/middleware.js')
 
 
+
 /* GET users listing. */
 //router.get('/', function (req, res, next) {
 //res.send('respond with a resource');
@@ -14,7 +15,6 @@ router.post('/register', Controllers.register);
 router.post('/login', Controllers.login);
 router.post('/resend', Controllers.resend);
 router.post('/verify', Middleware.verify);
-
 
 
 module.exports = router;

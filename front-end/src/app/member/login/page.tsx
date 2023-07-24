@@ -24,6 +24,7 @@ export default function Login() {
 			const result = response;
 			console.log(result.data);
 
+
 		}
 		catch (error) {
 			console.log(error)
@@ -53,6 +54,7 @@ export default function Login() {
 								</div>
 								<div>
 									<Link href='/'>
+
 										Forgot your password ?
 									</Link>
 								</div>
