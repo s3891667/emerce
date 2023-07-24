@@ -19,7 +19,7 @@ async function register(req, res) {
 		req.session.email = email;
 
 		//sending the opt code to users' emails
-		await Middleware.opt(req, res, verificationcode, email);
+		await Middleware.opt(req, res, verificationcode, email, un);
 
 		bcrypt.hash(pw, 10, function (err, hash) {
 			if (err) {
@@ -35,7 +35,7 @@ async function register(req, res) {
 		});
 		console.log(req.session.email)
 		await temporaryuser.save();
-		res.status(200).send(json("successfully registered"));
+		res.status(200).json("successfully registered");
 		//res.send('session sent!')
 
 	} catch (error) {
@@ -49,11 +49,11 @@ async function login(req, res) {
 		const user = mongoose.findOne({email: email});
 		const result = await bcrypt.compare(password, user.password);
 		if (result == False) {
-			res.status(500).send(json('Wrong password'))
+			res.status(500).json('Wrong password');
 		}
 		else {
 			req.session.un = email;
-			res.status(200).send(json('Successfully logged in !'))
+			res.status(200).json('Successfully logged in !');
 		}
 
 	} catch (error) {
@@ -70,14 +70,12 @@ async function resend(req, res) {
 	const email = req.session.email;
 	const un = req.session.username;
 	await Middleware.opt(req, res, code, email, un)
-	res.send(json('The code has been resent'))
+	res.status(200).json('The code has been resent');
 }
 
 async function order() {
 
 }
-
-
 
 
 module.exports = {

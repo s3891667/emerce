@@ -39,7 +39,7 @@ async function opt(req, res, code, email, un) {
 		html: `<b>Hi ${un} this is Emerce verification system </b>`, // html body
 	});
 	console.log(req.session.email);
-	res.send(json('The code has been sent to your email !'));
+	res.status(200).json('The code has been sent to your email !');
 }
 
 module.exports = {

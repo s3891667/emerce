@@ -21,7 +21,8 @@ export default function Login() {
 				},
 				withCredentials: true,
 			})
-			const result = response.data;
+			const result = response;
+			console.log(result.data);
 
 		}
 		catch (error) {
