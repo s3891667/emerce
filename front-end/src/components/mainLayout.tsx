@@ -29,15 +29,17 @@ export default function MainLayout({children}) {
 	}, [prevScrollPos]);
 	return (
 		<>
-			<div className=" bg-grey flex flex-col h-screen justify-between font-sans ">
-
+			<div className=" bg-white/30  flex flex-col h-screen justify-between font-sans ">
 				<header className={`z-20 fixed top-0 left-0 w-full bg-white shadow-lg transition duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-
 
 					<Nav />
 				</header>
-				<main className=" flex min-h-screen flex-col items-center justify-between p-24">{children}</main>
-				<div>
+				<div className='blurring '>
+					<main className="flex min-h-screen flex-col items-center justify-between p-24">{children}</main>
+				</div>
+
+				<div className=''>
+
 
 					<Footer />
 				</div>

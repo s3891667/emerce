@@ -21,7 +21,9 @@ export default function Login() {
 				},
 				withCredentials: true,
 			})
-			const result = response.data;
+			const result = response;
+			console.log(result.data);
+
 
 		}
 		catch (error) {
@@ -35,17 +37,17 @@ export default function Login() {
 		<>
 			<Layout>
 				<FormLayout>
-					<div className='  lg:mt-[80px]  bg-white lg:h-[35rem] h-96  flex justify-center items-center border rounded-md'>
+					<div className='check overflow-y-auto   lg:mt-[80px]  bg-white lg:h-[35rem] h-96  flex justify-center items-center border rounded-md'>
 						<form onSubmit={handleSubmit} method='post'>
 							<div className='flex flex-col items-center space-y-5'>
-								<div className='text-3xl font-medium'>
+								<div className='text-2xl lg:text-3xl font-medium'>
 									<h1>Welcome to Emerce</h1>
 								</div>
 								<div className='flex flex-col items-center'>
-									<input className='border border-slate-300 rounded w-80 h-10 pl-4' placeholder='Email' name='email' />
+									<input className='border border-slate-300 rounded w-70 lg:w-80 h-10 pl-4' placeholder='Email' name='email' />
 								</div>
 								<div className='flex flex-col items-center'>
-									<input className='border border-slate-300 rounded w-80 h-10 pl-4' placeholder='Password' name='pw' />
+									<input className='border border-slate-300 rounded w-70 lg:w-80 h-10 pl-4' placeholder='Password' name='pw' />
 								</div>
 								<div className='flex flex-col items-center'>
 									<button type='submit'>Sign In</button>

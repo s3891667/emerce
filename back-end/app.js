@@ -2,8 +2,9 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-
+var session = require('express-session')
 const cors = require("cors");
+const Middleware = require('./middleware/middleware')
 
 var logger = require('morgan');
 
@@ -12,23 +13,33 @@ var usersRouter = require('./routes/users/users');
 
 var app = express();
 
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
-app.use(cookieParser());
-
-app.use('/', indexRouter);
-
-app.use("/api/users", usersRouter);
-require("./db/db");
-
 app.use(
 	cors({
 		origin: "http://localhost:3000",
 		credentials: true,
 	})
 );
+app.use(cookieParser());
+app.use(
+	session({
+		secret: "s3891667",
+		resave: true,
+		saveUninitialized: true,
+		cookie: {secure: false}, // set secure: true if using HTTPS
+	})
+);
+
+
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
+app.use('/', indexRouter);
+
+app.use("/api/users", usersRouter);
+require("./db/db");
+
 
 
 // catch 404 and forward to error handler

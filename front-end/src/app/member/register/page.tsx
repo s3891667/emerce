@@ -1,12 +1,18 @@
 'use client';
+import {useRouter} from 'next/navigation'
 import Layout from '../../../components/mainLayout'
 import axios from 'axios';
+import Link from 'next/link';
 
 export default function Register() {
+	const router = useRouter()
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
 		const endpoint = 'http://localhost:5000/api/users/register'; // Update the endpoint URL
+		const veriLink = 'http://localhost:5000/api/users/verify';
+
 
 		// Get data from the form.
 		const data = {
@@ -29,8 +35,16 @@ export default function Register() {
 			});
 
 			// Get the response data from the server.
-			const result = response.data;
-			alert(`Is this your full name: ${result.data}`);
+			const result = response;
+			console.log(result.data);
+			if (result.status != 500) {
+				router.push(veriLink);
+
+			} else {
+				router.push('?error')
+			}
+
+
 		} catch (error) {
 			// Handle error
 			console.error(error);
