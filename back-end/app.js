@@ -1,10 +1,9 @@
 var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
+//var path = require('path');
 var cookieParser = require('cookie-parser');
 var session = require('express-session')
 const cors = require("cors");
-const Middleware = require('./middleware/middleware')
 
 var logger = require('morgan');
 
