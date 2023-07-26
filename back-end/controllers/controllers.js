@@ -5,6 +5,7 @@ const Middleware = require('../middleware/middleware');
 
 async function register(req, res) {
 	const {un, email, pw} = req.body;
+
 	try {
 		const codeGen = Math.floor(Math.random() * 10000);
 		const verificationcode = codeGen.toString().padStart(4, '0');
@@ -23,14 +24,17 @@ async function register(req, res) {
 
 		bcrypt.hash(pw, 10);
 
+
 		const temporaryuser = new User({
 			username: un,
 			password: pw,
 			email: email,
 			isverified: false,
 		});
+		console.log(req.session.email)
 		await temporaryuser.save();
 		return res.status(200).json("successfully registered");
+
 
 	} catch (error) {
 		console.log(error);
@@ -39,6 +43,7 @@ async function register(req, res) {
 
 async function login(req, res) {
 	try {
+
 		const {email, password} = req.body;
 		const user = await mongoose.findOne({email: email}).exec();
 		if (!user) {
@@ -74,6 +79,13 @@ async function resend(req, res) {
 	catch (err) {
 		console.log(err)
 	}
+}
+
+async function resend(req, res) {
+	const email = req.session.email;
+	const un = req.session.username;
+	await Middleware.opt(req, res, code, email, un)
+	res.status(200).json('The code has been resent');
 }
 
 async function order() {

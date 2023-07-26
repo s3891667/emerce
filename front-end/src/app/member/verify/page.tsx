@@ -13,6 +13,7 @@ export default function Verify() {
 		const endpoint = 'http://localhost:5000/api/users/verify/';
 		const loginLink = 'http://localhost:3000/member/login/';
 
+
 		try {
 			const response = await axios.post(endpoint, event.target.vericode.value, {
 				headers: {
@@ -29,6 +30,7 @@ export default function Verify() {
 			else {
 				console.log(response.data);
 				router.push('?error');
+
 			}
 
 		}
@@ -45,6 +47,7 @@ export default function Verify() {
 					<button type='submit'>verify</button>
 				</form>
 			</FormLayout>
+
 		</Layout>
 	</>)
 }
