@@ -15,6 +15,9 @@ router.post('/register', Controllers.register);
 router.post('/login', Controllers.login);
 router.post('/resend', Controllers.resend);
 router.post('/verify', Middleware.verify);
+router.get('/logout', Controllers.logout);
+router.get('/session', Middleware.session_get);
+
 
 
 module.exports = router;

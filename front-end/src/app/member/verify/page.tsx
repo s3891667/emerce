@@ -10,8 +10,9 @@ export default function Verify() {
 	const router = useRouter();
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const endpoint = 'http://localhost:5000/api/users/verify';
-		const loginLink = ' http://localhost:3000/member/login/';
+		const endpoint = 'http://localhost:5000/api/users/verify/';
+		const loginLink = 'http://localhost:3000/member/login/';
+
 
 		try {
 			const response = await axios.post(endpoint, event.target.vericode.value, {
@@ -27,7 +28,9 @@ export default function Verify() {
 				router.push(loginLink);
 			}
 			else {
-				router.push('?error')
+				console.log(response.data);
+				router.push('?error');
+
 			}
 
 		}
@@ -40,11 +43,10 @@ export default function Verify() {
 		<Layout>
 			<FormLayout>
 				<form onSubmit={handleSubmit}>
-					<input type='number' name='vericode' placeholder='Please enter OTP code'></input>
-					<button type='submit' />
+					<input type='number' id='vericode' name='vericode' placeholder='Please enter OTP code'></input>
+					<button type='submit'>verify</button>
 				</form>
 			</FormLayout>
-
 
 		</Layout>
 	</>)

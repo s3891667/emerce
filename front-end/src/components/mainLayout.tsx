@@ -1,11 +1,16 @@
 "use client";
 import Nav from '../components/nav'
 import Footer from '../components/footer'
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useInsertionEffect} from 'react';
+import axios from 'axios';
+import {SessionProvider, useSession} from 'next-auth/react';
 
 export default function MainLayout({children}) {
 	const [prevScrollPos, setPrevScrollPos] = useState(0);
 	const [isVisible, setIsVisible] = useState(true);
+
+	const session_api = 'http://localhost:5000/api/users/session';
+
 
 	useEffect(() => {
 		const handleScroll = () => {
